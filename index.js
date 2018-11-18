@@ -4,6 +4,7 @@ navigator.webkitGetUserMedia({ video: false, audio: true }, function (stream) {
     var peer = new SimplePeer({
         initiator: location.hash === "#init",
         trickle: false,
+        reconnectTimer: 100,
         stream: stream
     });
 
